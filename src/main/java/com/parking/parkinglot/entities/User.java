@@ -1,6 +1,7 @@
 package com.parking.parkinglot.entities;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
@@ -15,6 +16,9 @@ public class User {
   private String username;
   private String password;
   private String email;
+    @Id
+    private Long id;
+
   public String getUsername() {
     return username;
   }
@@ -26,7 +30,7 @@ public class User {
   @OneToMany(mappedBy = "owner", orphanRemoval = true)
   private List<Car> cars = new ArrayList<>();
 
-  public List<Car> getCars() {
+  public List<Car> getUsers() {
     return cars;
   }
 
@@ -48,5 +52,13 @@ public class User {
 
   public void setEmail(String email) {
     this.email = email;
+  }
+
+  public void setId(Long id) {
+    this.id = id;
+  }
+
+  public Long getId() {
+    return id;
   }
 }

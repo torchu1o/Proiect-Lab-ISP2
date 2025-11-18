@@ -1,13 +1,11 @@
 package com.parking.parkinglot.entities;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 
 @Entity
 @Table(name = "cars")
 public class Car {
+  @Id
   private Long id;
   private String licensePlate;
   private String parkingSpot;
