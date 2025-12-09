@@ -1,9 +1,6 @@
 package com.parking.parkinglot.entities;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.OneToMany;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 
 import java.util.ArrayList;
 import java.util.LinkedHashSet;
@@ -16,8 +13,10 @@ public class User {
   private String username;
   private String password;
   private String email;
-    @Id
-    private Long id;
+
+  @Id
+  @GeneratedValue(strategy = GenerationType.AUTO) //asta face ca id-u sa se autoincrementeze
+  private Long id;
 
   public String getUsername() {
     return username;
@@ -31,6 +30,10 @@ public class User {
   private List<Car> cars = new ArrayList<>();
 
   public List<Car> getUsers() {
+    return cars;
+  }
+
+  public List<Car> getCars() {
     return cars;
   }
 

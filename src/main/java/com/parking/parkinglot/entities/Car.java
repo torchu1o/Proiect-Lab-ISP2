@@ -6,6 +6,7 @@ import jakarta.persistence.*;
 @Table(name = "cars")
 public class Car {
   @Id
+  @GeneratedValue(strategy = GenerationType.AUTO) //asta face ca id-u sa se autoincrementeze
   private Long id;
   private String licensePlate;
   private String parkingSpot;
